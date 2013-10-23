@@ -1,0 +1,25 @@
+<%= current_user.username + "'s Positions"%>
+
+<table id="positions">
+  <th>Company Name</th>
+  <th>Purchase Date</th>
+  <th>Price Paid</th>
+  <th>Number of Shares</th>
+  <th>Position Value</th>
+  <th>Current Price</th>
+  <th>Total Value</th>
+  <th>Net Gain / Loss</th>
+<% current_user.trades.each do |trade| %>
+  <tr>
+    <td><a href="/company_page/<%= trade.company_id %>"><%= Company.find(trade.company_id).name %></a></td>
+    <td><%= Company.find(trade.company_id).prices.last.date %></td>
+    <td><%= price_paid = trade.price_paid %></td>
+    <td><%= num_shares = trade.shares %></td>
+    <td><%= cost_basis = price_paid*num_shares %></td>
+    <td><%= current_per_share_price = Company.find(trade.company_id).prices.last.price %></td>
+    <td><%= total_value = num_shares*current_per_share_price %></td>
+    <td><%= total_value - cost_basis %></td>
+  </tr>
+
+<% end %>
+</table>

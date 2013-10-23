@@ -1,3 +1,5 @@
 class Trade < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to :shareholder, class_name: "User" # renaming user to shareholder, but making shareholder = user (model)
+  belongs_to :company
+
 end

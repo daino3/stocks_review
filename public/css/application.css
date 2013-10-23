@@ -1,6 +1,6 @@
 .container {
   margin: 20px auto;
-  width: 900px;
+  width: 90%;
   padding: 0px 20px 20px 20px;
   border: 1px dotted black;
 }
@@ -14,13 +14,7 @@ header {
   color:white;
 }
 
-header a {
-  float:right;
-  text-decoration:none;
-  color:white;
-  line-height:40px;
-  padding-right:100px;
-}
+
 
 #login {
   position:absolute;
@@ -58,4 +52,53 @@ header a {
   position: absolute;
   bottom: 15px;
   left: 15px;
+}
+
+header ul li {
+  list-style-type: none;
+}
+
+header ul {
+/*  display: inline;
+*/  padding: 0px;
+  margin: 0px;
+  float:right;
+}
+
+header li {
+  display:inline;
+  width:100px;
+  border-right:1px solid white;
+  padding:0px 20px;
+}
+
+header a {
+  text-decoration:none;
+  color:white;
+  line-height:40px;
+}
+header li:last-child {
+  border:none;
+  padding-right:0px;
+}
+
+#positions {
+  margin: 0 auto;
+}
+
+#positions th{
+  padding: 10px;
+  background-color: #679267;
+  border-left: 2px solid white;
+  color: white;
+  text-align: center;
+}
+
+#positions a:hover{
+  font-weight: bold;
+}
+
+#positions a{
+  text-decoration: none;
+  color:black;
 }

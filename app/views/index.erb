@@ -1,0 +1,30 @@
+<div class="container">
+  <h1>Welcome to Sinatra!</h1>
+  
+  <!-- login -->
+  <form id="login" action="/" method="post">
+    <input type="text" name="username" placeholder="Username" />
+    <input type="password" name="password" placeholder = "Password" />
+    <input type="submit"/>
+  </form>
+
+  <!-- Create_User -->
+  <form id="create_new_user" action="/create_new_user" method="post">
+    <label for="username">Enter Username</label>
+    <input type="text" name="info[username]" placeholder="Username" />
+    <br>
+    
+    <label for="email">Enter Username</label>
+    <input type="text" name="info[email]" placeholder = "Email" />
+    <br>
+    <label for="password">Password</label>
+    <input type="password" name="info[password]" placeholder = "Password" />
+    <br>
+    <label for="password_confirmation">Password Confirmation</label>
+    <input type="password_confirmation" name="info[password_confirmation]" placeholder = "Password Confirmation" />
+
+    <input type="submit" class="new_user_submit" />
+    <div style="clear:both">
+    </div>
+  </form>
+</div>

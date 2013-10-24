@@ -1,0 +1,19 @@
+<!-- Finish this to display num of shares to purchase: link to javascript to display if the user clicks on the stock. Then create method to check if the user's balance is sufficient to purchase, then deduct funds if yes -->
+<form id="purchase_stock" action="/create_new_user" method="post">
+  <label for="number_of_shares">Number of Shares</label>
+  <input type="text" name="info[username]" placeholder="Username" />
+  <br>
+  
+  <label for="email">Price</label>
+  <input type="text" name="info[price]" value="<%= %>" />
+  <br>
+  <label for="password">Password</label>
+  <input type="password" name="info[password]" placeholder = "Password" />
+  <br>
+  <label for="password_confirmation">Password Confirmation</label>
+  <input type="password_confirmation" name="info[password_confirmation]" placeholder = "Password Confirmation" />
+
+  <input type="submit" class="new_user_submit" />
+  <div style="clear:both">
+  </div>
+</form>

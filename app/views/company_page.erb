@@ -1,18 +1,29 @@
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <%= @company.name + "'s Historical Performance"%>
 
+<!-- Put this into a partial to render on purchase page -->
+<script type="text/javascript">
+  var companyData = []
+  <% @array_of_dates_and_prices.each do |date_price_array| %>
+    companyData.push(<%= date_price_array %>)
+  <% end %> 
+</script>
 
-      <script type="text/javascript">
-        google.load("visualization", "1", {packages:["corechart"]});
-        google.setOnLoadCallback(drawChart);
-        function drawChart() {
-          var data = google.visualization.arrayToDataTable(percentages<%= counter %>);
-          var options = {
-            backgroundColor: 'none',
-            legend: 'none',
-            vAxis: {textStyle: {color: 'none'}},
-            hAxis: {minValue: 0, maxValue: 100}
-          };
-          var chart = new google.visualization.BarChart(document.getElementById('chart_div<%= counter %>'));
-          chart.draw(data, options);
-      }
-    </script>
+<script type="text/javascript">
+  google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(drawChart);
+
+  function drawChart() {
+    var graphData = google.visualization.arrayToDataTable(companyData);
+
+    var options = {
+      title: 'Historical Stock Price',
+      hAxis: {title: 'Date'},
+      vAxis: {title: 'Price'},
+    };
+
+    var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      chart.draw(graphData, options);
+}
+</script>
+<div id="chart_div" class="chart_div" style="width: 900px; height: 500px;"></div>

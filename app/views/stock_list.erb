@@ -1,0 +1,13 @@
+<table id="positions">
+  <th>Company Name</th>
+  <th>Current Price</th>
+  <th>Graph</th>
+<% Company.all.each do |company| %>
+  <tr>
+    <td><a href="/company_page/<%= company.id %>"><%= company.name %></a></td> <!-- When you click on this we want a partial to display the purchase option -->
+    <td><%= company.prices.last.price %></td>
+    <td><%= "TBD" %></td>
+  </tr>
+
+<% end %>
+</table>

@@ -1,5 +1,17 @@
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<%= @company.name + "'s Historical Performance"%>
+<nav>
+  <a id="toggle" style="color: white">close nav bar</a>
+
+  <ul id="list_to_hide">
+    <li><%= @company.name %></li>
+    <li><a href="#">Historical Performance</a></li>
+    <li><a href="#">Fundamentals</a></li>   
+    <li><a href="#">Industry Trends</a></li>
+    <li><a href="#">Product & Positioning</a></li>
+    <li><a href="#">Secret Sauce</a></li>
+  </ul>
+  <br clear="all">
+</nav>
 
 <!-- Put this into a partial to render on purchase page -->
 <script type="text/javascript">
@@ -20,6 +32,7 @@
       title: 'Historical Stock Price',
       hAxis: {title: 'Date'},
       vAxis: {title: 'Price'},
+      lineWidth: 10,
     };
 
     var chart = new google.visualization.LineChart(document.getElementById('chart_div'));

@@ -1,7 +1,9 @@
 <table id="positions">
-  <th>Company Name</th>
-  <th>Current Price</th>
-  <th>Graph</th>
+  <tr>
+    <th>Company Name</th>
+    <th>Current Price</th>
+    <th>Graph</th>
+  </tr>
 
 <% Company.all.each do |company| %>
   <tr>
@@ -9,18 +11,8 @@
     <td><%= company.prices.last.price %></td>
     <td>TBD </td>
   </tr>
-  <tr id="buy_form" style="display:none">
-    <td>
-      <form action="/buy_stock/<%= company.id %>" method="post" >
-        Current Price: <%= company.prices.last.price %> <input type="text" name="quantitiy" placeholder="How Many?"/>
-        <br>
-        <input type="submit" />
-        <br>
-        <a href='/hide_form' id="hide_form" style="color:white">Hide Form</a>
-      </form>
-    <td>
-
-  </tr>
-
 <% end %>
 </table>
+<% if @funds_error %>
+  <p><%= @funds_error %></p>
+<% end %>

@@ -17,7 +17,7 @@ require 'logger'
 require 'nokogiri'
 require 'sinatra'
 require "sinatra/reloader" if development?
-
+require 'net/http'
 require 'erb'
 
 # Some helper constants for path-centric logic

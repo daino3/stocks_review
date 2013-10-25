@@ -1,4 +1,6 @@
 <%= current_user.username + "'s Positions"%>
+<br>
+<%= "Balance: " + current_user.balance.to_s %>
 
 <table id="positions">
   <th>Company Name</th>
@@ -19,9 +21,19 @@
     <td><%= current_per_share_price = Company.find(trade.company_id).prices.last.price %></td>
     <td><%= total_value = num_shares*current_per_share_price %></td>
     <td><%= total_value - cost_basis %></td>
+    <td><a href="/sell_stock/<%= trade.id %>">Sell Stahck</a></td>
   </tr>
-
 <% end %>
+  <tr id="total">
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><%= "Total" %></td>
+    <td></td>
+    <td><%= "Total" %></td>
+    <td><%= "Total" %></td>
+
 </table>
 
-<a href="/buy_stock">Buy Stock</a>
+<a href="/buy_stock">Buy Stahcks</a>

@@ -1,26 +1,30 @@
 
-  <h1>Welcome to StockTrader</h1>
+  <h1>Fahckin' Wicked Stahck Tradah</h1>
   
   <!-- login -->
   <form id="login" action="/login" method="post">
-    <input type="text" name="username" placeholder="Username" />
+    <input type="text" name="email" placeholder="Email" />
     <input type="password" name="password" placeholder = "Password" />
     <input type="submit"/>
   </form>
 
+
+  <h1 style="font-size: 30px" id='intro'>Sign Up for Fahkin' Stahcks</h1><br>
   <!-- Create_User -->
   <form id="create_new_user" action="/create_new_user" method="post">
-    <label for="username">Enter Username</label>
+    
     <input type="text" name="info[username]" placeholder="Username" />
     <br>
     
-    <label for="email">Enter Username</label>
     <input type="text" name="info[email]" placeholder = "Email" />
     <br>
-    <label for="password">Password</label>
+    
+    <input type="text" name="info[balance]" placeholder = "Starting Balance" />
+    <br>
+
     <input type="password" name="info[password]" placeholder = "Password" />
     <br>
-    <label for="password_confirmation">Password Confirmation</label>
+    
     <input type="password_confirmation" name="info[password_confirmation]" placeholder = "Password Confirmation" />
 
     <input type="submit" class="new_user_submit" />

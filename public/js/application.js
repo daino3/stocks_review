@@ -6,19 +6,30 @@ $(document).ready(function() {
 
   $(".buy_stock").on('click', function(e){
     e.preventDefault();
-    var data = $(this).text()
-    console.log(data)
+
+    var data = $(this).text();
+    var that = $(this).parent().parent().get(0);
     $.get('/get_data', data, function(response){
-      // console.log(response)
-      $("#buy_form").show();
-      $("<p>response</p>").appendTo("#buy_form");
+      $('#buy_form').remove();
+      $(that).after(response);
+      $('#buy_form').hide().fadeIn(1000);
+      console.log("here1");
     });
-  })
-
-
-  $("#hide_form").on('click', function(event){
-    event.preventDefault();
-    console.log("here");
-    $("#buy_form").toggle();
-  })
+    // $("#hide_form").on('click', function(event){
+    //     event.preventDefault();
+    //     console.log("here2");
+    //     $("#buy_form").remove();
+    //   });
+  });
+    $("#toggle").on('click', function(){ 
+    $("#list_to_hide").animate({height: "toggle"},"slow", function(){
+      $(this).parent().toggleClass("contracted");
+      // console.log($(this).parent().attr("class"))
+      if ($(this).parent().attr("class") === "contracted") {
+        $(this).prev().text("open nav bar");
+      }
+      else
+        $(this).prev().text("close nav bar");
+    });
+  });
 });

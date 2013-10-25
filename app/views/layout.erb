@@ -21,6 +21,7 @@
   <header>
     <div style="width:900px;margin:auto;padding:0px 20px">
     <ul>
+      <li><a href='/' id="go_home">Go Home</a></li>
     <% if !current_user %>
       <li><a href="#" id="loginbutton">Log in</a></li>
     <% else %>
@@ -32,6 +33,10 @@
   </header>
   <div class="container">
     <%= yield %>
+
   </div>
+
 </body>
 </html>
+
+

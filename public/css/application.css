@@ -23,6 +23,8 @@ header {
   background-color:black;
   padding:20px;
   display:none;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 #create_new_user {
@@ -101,4 +103,10 @@ header li:last-child {
 #positions a{
   text-decoration: none;
   color:black;
+}
+
+#buy_form {
+  border: 1px solid black;
+  background-color: #314046;
+  color: white;
 }
